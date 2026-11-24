@@ -1,0 +1,122 @@
+/* ---------- Colors (change these to restyle the page) ---------- */
+:root {
+  --bg: #eef4f8;
+  --card: #ffffff;
+  --text: #14232e;
+  --muted: #5b6f7d;
+  --accent: #1f6f9f;
+  --error-bg: #fde8e8;
+  --error-text: #9b1c1c;
+}
+
+/* Automatic dark mode if the device uses it */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1a22;
+    --card: #182833;
+    --text: #e8f1f6;
+    --muted: #9db2bf;
+    --accent: #5db4e6;
+    --error-bg: #3b1d1d;
+    --error-text: #ffb4b4;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+main { width: 100%; max-width: 420px; }
+
+h1 { margin: 0 0 4px; font-size: 2rem; }
+
+.subtitle {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+}
+
+/* ---------- Search form ---------- */
+.search { display: flex; gap: 8px; font-family: system-ui, sans-serif; }
+
+input {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid var(--muted);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text);
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.6; cursor: wait; }
+
+/* ---------- Messages ---------- */
+#message {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: system-ui, sans-serif;
+}
+
+#message.error { background: var(--error-bg); color: var(--error-text); }
+#message.info { color: var(--muted); padding-left: 0; }
+
+/* ---------- Weather result card ---------- */
+#result {
+  margin-top: 20px;
+  padding: 24px;
+  background: var(--card);
+  border-radius: 10px;
+  border: 1px solid var(--muted);
+}
+
+#result h2 { margin: 0; font-size: 1.5rem; }
+
+.country {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-family: system-ui, sans-serif;
+}
+
+.temp { font-size: 4rem; line-height: 1; margin: 0; }
+.condition { margin: 8px 0 20px; font-size: 1.2rem; }
+
+dl {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 16px;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+dt { color: var(--muted); }
+dd { margin: 0; font-weight: 600; text-align: right; }
+
+/* Makes the "hidden" attribute always work */
+[hidden] { display: none !important; }

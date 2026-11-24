@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Finder</title>
+
+  <!-- Link the CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Weather Finder</h1>
+    <p class="subtitle">Type a city to see its current weather.</p>
+
+    <!-- 1. The form where the user types a city name -->
+    <form id="search-form" class="search">
+      <input id="city-input" type="text" placeholder="e.g. Kochi" aria-label="City name" autocomplete="off">
+      <button id="search-button" type="submit">Search</button>
+    </form>
+
+    <!-- 2. Area for loading and error messages -->
+    <div id="message" hidden role="status"></div>
+
+    <!-- 3. Area where the weather is shown -->
+    <section id="result" hidden>
+      <h2 id="city-name"></h2>
+      <p class="country" id="country-name"></p>
+      <p class="temp" id="temperature"></p>
+      <p class="condition" id="condition"></p>
+      <dl>
+        <dt>Feels like</dt>   <dd id="feels-like"></dd>
+        <dt>Humidity</dt>     <dd id="humidity"></dd>
+        <dt>Wind speed</dt>   <dd id="wind"></dd>
+      </dl>
+    </section>
+  </main>
+
+  <!-- Link the JavaScript file (at the end so the page elements exist first) -->
+  <script src="script.js"></script>
+</body>
+</html>
